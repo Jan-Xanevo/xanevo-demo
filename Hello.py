@@ -70,7 +70,7 @@ def extractJsonOutOfResponse(string):
      
       return json_obj
   else:
-      return "NO JSOn"
+      return "No JSON"
 
 #Methode um Informationen aus JSON zu filtern und Datenbankfilterung durch Aufruf der Methode   filter_rieker_database durchzuführen
 def setDataAndFilterWithJSON(json_string):
