@@ -1,17 +1,3 @@
-# Copyright (c) Streamlit Inc. (2018-2022) Snowflake Inc. (2022)
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import streamlit as st
 import os
 import pandas as pd
@@ -19,18 +5,8 @@ import numpy as np
 import re
 import json
 from openai import OpenAI
-from streamlit.logger import get_logger
 
-LOGGER = get_logger(__name__)
-
-
-def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
-
-    #openai API Key aus Umgebungsvariable lesen
+#openai API Key aus Umgebungsvariable lesen
 API_KEY = os.environ["API_KEY"]
 openai_api_key = API_KEY
 
@@ -70,7 +46,7 @@ def extractJsonOutOfResponse(string):
      
       return json_obj
   else:
-      return "No JSON"
+      return "NO JSOn"
 
 #Methode um Informationen aus JSON zu filtern und Datenbankfilterung durch Aufruf der Methode   filter_rieker_database durchzuführen
 def setDataAndFilterWithJSON(json_string):
@@ -234,7 +210,3 @@ if prompt := st.chat_input("What is up?"):
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": full_response})# Antwort im Chat anzeigen lassen
     print(st.session_state.chatVerlauf_UserInteraction)
-
-
-if __name__ == "__main__":
-    run()
