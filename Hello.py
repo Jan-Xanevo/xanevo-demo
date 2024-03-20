@@ -125,7 +125,7 @@ client = OpenAI(
 #Zusätzlicher Agent für Begrüßung 
 chatVerlauf_UserInteraction=[{
         "role": "system",
-           "content": f"You are a polite and helpful assistant who should help the user find the right shoes out of a Shoes Database.That's why you greet the user first and ask how you can help them. Right this welcoming Message in German.  "
+           "content": f"Sie sind ein höflicher und hilfsbereiter Assistent, der dem Benutzer helfen soll, die richtigen Schuhe aus einer Schuhdatenbank zu finden.  "
         }]
 chat_User = client.chat.completions.create(
          model="gpt-4-1106-preview",
